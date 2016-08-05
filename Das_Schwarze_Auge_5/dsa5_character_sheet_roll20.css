@@ -357,6 +357,10 @@ input.sheet-show-nicht-humanoid:checked ~ .sheet-humanoid {
 	display: none;
 }
 
+.sheet-zeige-bhk:not(:checked) ~ .sheet-bhk {
+	display: none;
+}
+
 .sheet-liturgie-aktiviert:checked + div.sheet-zauber {
     display: inline-block;  
     white-space: nowrap;
@@ -498,29 +502,79 @@ input.sheet-show-nicht-humanoid:checked ~ .sheet-humanoid {
 
 /*--------------------------------------Stylings - Kampf--------------------------------------*/
 
+
+input.sheet-nebenhand-aktiv:not(:checked) ~ div.sheet-nebenhand-aktiv {
+	display: none;
+}
+
+.sheet-nahkampf-mods-aktiv:not(:checked) + div.sheet-nahkampf-zusammenfassung,
+.sheet-nahkampf-mods-aktiv:not(:checked) + div.sheet-nahkampf-mods
+{
+	display: none;
+}
+
+.sheet-nahkampf-zusammenfassung-kategorie,
+.sheet-nahkampf-zusammenfassung-at,
+.sheet-nahkampf-zusammenfassung-pa,
+.sheet-nahkampf-zusammenfassung-aw,
+.sheet-nahkampf-zusammenfassung-tpw,
+.sheet-nahkampf-zusammenfassung-tpp,
+.sheet-nahkampf-zusammenfassung-proben
+{
+	display: inline-block;  
+    white-space: nowrap;
+}
+
+.sheet-nahkampf-zusammenfassung-kategorie
+{
+	width: 8em;
+}
+.sheet-nahkampf-zusammenfassung-at,
+.sheet-nahkampf-zusammenfassung-pa,
+.sheet-nahkampf-zusammenfassung-aw,
+.sheet-nahkampf-zusammenfassung-tpw,
+.sheet-nahkampf-zusammenfassung-tpp
+{
+    width: 3.5em;
+}
+
+.sheet-nahkampf-zusammenfassung-proben
+{
+    width: 14em;
+}
+
+
 .sheet-kampf-passiv:checked + div.sheet-sf-row ,
 .sheet-sf-aktiviert:checked + div.sheet-sf-row {
     display: inline-block;  
     white-space: nowrap;
+    width: 100%;
 }
 
-select.sheet-max-stufe {
+div.sheet-max-stufe {
 	display: none;
 }
 
-.sheet-stufe-aktiviert:checked + select.sheet-max-stufe {
+.sheet-stufe-aktiviert:checked + div.sheet-max-stufe {
 	display: inline-block;
 }
 
-
+.sheet-nahkampf-zusammenfassung,
 .sheet-waffenauswahl,
 .sheet-schildauswahl,
 .sheet-parierwaffenauswahl,
-.sheet-fernwaffenauswahl
+.sheet-fernwaffenauswahl,
+.sheet-gegnerwerte
 {
     text-align: left;
     white-space: nowrap;
     display: inline-block;
+    width:100%;
+}
+
+.sheet-gegnerwerte-label
+{
+	width:8em;
 }
 
 .sheet-waffenauswahl-name,
@@ -530,8 +584,6 @@ select.sheet-max-stufe {
 {
 	width:11em;
 }
-.sheet-waffenauswahl-at,
-.sheet-waffenauswahl-pa,
 .sheet-schildauswahl-at,
 .sheet-schildauswahl-pa,
 .sheet-parierwaffenauswahl-at,
@@ -547,19 +599,21 @@ select.sheet-max-stufe {
 	width:4em;
 }
 
-.sheet-waffenauswahl-aktiv,
+.sheet-gegnerwerte-wert
+{
+	width:6em;
+}
+
 .sheet-schildauswahl-aktiv,
 .sheet-parierwaffenauswahl-aktiv,
 .sheet-fernwaffenauswahl-aktiv 
 {
-	width:2em;
-	text-align: right;
+	text-align: left;
+	display:inline-block
 }
 
 
 .sheet-waffenauswahl-name,
-.sheet-waffenauswahl-at,
-.sheet-waffenauswahl-pa,
 .sheet-waffenauswahl-aktiv,
 .sheet-waffenauswahl-als-zh,
 .sheet-schildauswahl-name,
@@ -573,7 +627,9 @@ select.sheet-max-stufe {
 .sheet-parierwaffenauswahl-aktiv,
 .sheet-fernwaffenauswahl-name,
 .sheet-fernwaffenauswahl-aktiv,
-.sheet-fernwaffenauswahl-fk
+.sheet-fernwaffenauswahl-fk,
+.sheet-gegnerwerte-label,
+.sheet-gegnerwerte-wert
 {
     display: inline-block;
 }
